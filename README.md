@@ -15,9 +15,9 @@
 
 ## 🧭 Project Overview
 
-In recent decades, the volume of ecological data available at national and international levels has expanded significantly, with many open-access datasets now offered through online platforms (Güntsch et al., 2025). Despite this progress, much legacy data remains fragmented—spread across various small-scale studies—making it time-consuming and difficult to identify relevant datasets for a specific region (Reyserhove et al., 2020).
+In recent decades, the volume of ecological data available at national and international levels has expanded significantly, with many open-access datasets now offered through online platforms (Güntsch et al., 2025). Despite this progress, much legacy data remains fragmented — spread across various small-scale studies — making it time-consuming and difficult to identify relevant datasets for a specific region (Reyserhove et al., 2020).
 
-Ecologists, especially those working on data-intensive tasks such as modelling, frequently face challenges in efficiently locating and manually downloading data. Moreover, repetitive preprocessing steps—like spatial clipping or reprojection—are often necessary before datasets can be used for analysis.
+Ecologists, especially those working on data-intensive tasks such as modelling, frequently face challenges in efficiently locating and manually downloading data. Moreover, repetitive preprocessing steps — like spatial clipping or reprojection — are often necessary before datasets can be used for analysis.
 
 This project addresses these limitations by leveraging standardized Open Geospatial Consortium (OGC) web services and APIs (OGC, 2016) to automate the discovery and processing of ecological data. The solution aims to simplify access to distributed geospatial datasets, particularly for the Veluwe region in the Netherlands.
 
