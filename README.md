@@ -19,7 +19,7 @@ In recent decades, the volume of ecological data available at national and inter
 
 Ecologists, especially those working on data-intensive tasks such as modelling, frequently face challenges in efficiently locating and manually downloading data. Moreover, repetitive preprocessing steps — like spatial clipping or reprojection — are often necessary before datasets can be used for analysis.
 
-This project addresses these limitations by leveraging standardized Open Geospatial Consortium (OGC) web services and APIs (OGC, 2016) to automate the discovery and processing of ecological data. The solution aims to simplify access to distributed geospatial datasets, particularly for the Veluwe region in the Netherlands.
+This project addresses these limitations by using standardized Open Geospatial Consortium (OGC) web services and APIs (OGC, 2016) to automate the discovery and processing of ecological data. The solution aims to simplify access to distributed geospatial datasets, particularly for the Veluwe region in the Netherlands.
 
 ---
 
