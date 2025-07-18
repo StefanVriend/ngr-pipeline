@@ -12,7 +12,9 @@
 **Repository Name:** `research-project-internship-nioo`
 
 ---
+
 This repository contains a reproducible pipeline for discovering, filtering, and downloading ecological geospatial datasets for the Veluwe region (Netherlands). It uses standardized OGC (Open Geospatial Consortium) web services to automate access to open geodata from the [Nationaal Georegister (NGR)](https://www.nationaalgeoregister.nl/).
+
 ---
 
 ## 📚 Context
@@ -79,7 +81,7 @@ The pipeline consists of four main components. Each is implemented in a separate
 
 ---
 
-## 📦 Output
+## Output
 
 - Metadata tables (`.csv`)
 - Raster files (`.tif`)
@@ -88,7 +90,7 @@ The pipeline consists of four main components. Each is implemented in a separate
 
 ---
 
-## 📋 Requirements
+## Requirements
 
 - Python 3.11+
 - Jupyter Notebook
