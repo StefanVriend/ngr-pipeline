@@ -17,7 +17,7 @@ This repository contains a reproducible pipeline for discovering, filtering, and
 
 ---
 
-## 📚 Context
+## Context
 
 Although ecological data availability has grown significantly, researchers still face major challenges accessing relevant datasets—particularly legacy datasets scattered across studies or national databases requiring regional filtering.
 
