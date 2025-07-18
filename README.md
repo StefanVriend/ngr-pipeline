@@ -1,58 +1,96 @@
-# 🌿 Internship Project
+# Internship Project
 
-## 📄 Summary
+## Summary
 
 **Author:** Hudson Passos  
 **Institution:** Wageningen University & Research (WUR)  
 **Internship Host:** Netherlands Institute of Ecology (NIOO-KNAW)  
-**Duration:** April 2, 2025 – August 4, 2025  
-**Project Title:** *Simplified Access to Veluwe Ecological Data Through Open Geospatial APIs*  
+**Duration:** April 2, 2025 – August 12, 2025  
+**Project Title:** *Simplified Access to Veluwe Ecological Data Through OGC Web Services*  
 **Host Supervisor:** Stefan Vriend (NIOO-KNAW)  
 **WUR Supervisor:** Liesbeth Bakker (WUR, NIOO-KNAW)  
 **Repository Name:** `research-project-internship-nioo`
 
 ---
+This repository contains a reproducible pipeline for discovering, filtering, and downloading ecological geospatial datasets for the Veluwe region (Netherlands). It uses standardized OGC (Open Geospatial Consortium) web services to automate access to open geodata from the [Nationaal Georegister (NGR)](https://www.nationaalgeoregister.nl/).
+---
 
-## 🧭 Project Overview
+## 📚 Context
 
-In recent decades, the volume of ecological data available at national and international levels has expanded significantly, with many open-access datasets now offered through online platforms (Güntsch et al., 2025). Despite this progress, much legacy data remains fragmented — spread across various small-scale studies — making it time-consuming and difficult to identify relevant datasets for a specific region (Reyserhove et al., 2020).
+Although ecological data availability has grown significantly, researchers still face major challenges accessing relevant datasets—particularly legacy datasets scattered across studies or national databases requiring regional filtering.
 
-Ecologists, especially those working on data-intensive tasks such as modelling, frequently face challenges in efficiently locating and manually downloading data. Moreover, repetitive preprocessing steps — like spatial clipping or reprojection — are often necessary before datasets can be used for analysis.
-
-This project addresses these limitations by using standardized Open Geospatial Consortium (OGC) web services and APIs (OGC, 2016) to automate the discovery and processing of ecological data. The solution aims to simplify access to distributed geospatial datasets, particularly for the Veluwe region in the Netherlands.
+This project addresses those challenges by building an automated Python pipeline that streamlines the discovery, filtering, and retrieval of geospatial data. It is fully aligned with the [FAIR data principles](https://www.go-fair.org/fair-principles/)—**Findable, Accessible, Interoperable, and Reusable**—and evaluates the compatibility between NGR metadata and the [LTER-LIFE](https://lter-nl.nl/en) metadata structure.
 
 ---
 
-## 🔧 Methodology
+## Pipeline Overview
 
-The developed pipeline enables:
+The pipeline consists of four main components. Each is implemented in a separate Jupyter Notebook and can be run independently or sequentially.
 
-- **Automated discovery** of datasets from:
-  - NGR (Dutch National Georegister)  
-  - PDOK (Publieke Dienstverlening Op de Kaart)  
-  - AgroDataCube  
+### 1️⃣ Harvesting Metadata from NGR
 
-- **Spatial filtering** to identify datasets intersecting the Veluwe region
+**File:** `01_ngr_metadata_extractor.ipynb`
 
-- **Metadata filtering**, using:
-  - A curated list of ecological keywords provided by NIOO experts  
-  - Optionally, a large language model (LLM) to interpret metadata descriptions and improve relevance
-
-- **Preprocessing** of raster data, including:
-  - Reprojection  
-  - Resampling  
-  - Clipping to study area
-
-This approach significantly reduces manual effort and increases reproducibility in ecological research workflows (Brousil et al., 2023). It also supports the broader objectives of the **LTER-LIFE initiative**, coordinated by NIOO-KNAW, by promoting the reuse and integration of ecological datasets.
+- Retrieves metadata records from the NGR catalog using CSW (Catalogue Service for the Web)
+- Parses XML responses to extract metadata fields such as:
+  - Title
+  - Abstract
+  - Bounding box
+  - Service URLs
+  - Keywords
 
 ---
 
-## 📚 References
+### 2️⃣ Extracting OGC Service Metadata
 
-- Brousil, M., Filazzola, A., Meyer, M., Sharma, S., & Hampton, S. (2023). Improving ecological data science with workflow management software. *Methods in Ecology and Evolution*, 14, 1381–1388. https://doi.org/10.1111/2041-210X.14113  
-- Güntsch, A., Overmann, J., Ebert, B., Bonn, A., Bras, Y., Engel, T., ... & Luther, K. (2025). National biodiversity data infrastructures: ten essential functions for science, policy, and practice. *BioScience*, 75, 139–151. https://doi.org/10.1093/biosci/biae109  
-- OGC. (2016). *OGC® Catalogue Services 3.0 – General Model* (Version 3.0, OGC 12-168r6). http://docs.opengeospatial.org/is/12-168r6/12-168r6.html  
-- Reyserhove, L., Desmet, P., Oldoni, D., Adriaens, T., Strubbe, D., ... & Groom, Q. (2020). A checklist recipe: making species data open. *Database*, baaa084. https://doi.org/10.1093/database/baaa084  
+**File:** `02_get_coverage_and_feature_names.ipynb`
+
+- Uses OGC operations:
+  - `GetCapabilities`
+  - `DescribeCoverage` (for rasters)
+  - `DescribeFeatureType` (for vectors)
+- Retrieves:
+  - Spatial resolution
+  - CRS
+  - Coverage names / feature type names
+  - Geometry types
 
 ---
+
+### 3️⃣ Spatial and Content-Based Filtering
+
+**File:** `03_filters_spatial_semantic.ipynb`
+
+- **Spatial filter:** selects datasets intersecting the Veluwe region (EPSG:28992), including a second-pass check to verify data presence
+- **Content filter:** applies fuzzy string matching (`fuzzywuzzy`) to metadata keywords and abstracts using a predefined ecological keyword list
+
+---
+
+### 4️⃣ Data Download via WCS and WFS
+
+**File:** `04_download_wcs_and_wfs.ipynb`
+
+- Downloads **raster data** via WCS and **vector data** via WFS
+- Features:
+  - Tiling support for large rasters (with merging)
+  - Pagination for WFS downloads
+  - Fallbacks for version and axis label inconsistencies
+- Controlled via two editable CSVs (`wcs_table.csv`, `wfs_table.csv`) to manually select layers for download
+
+---
+
+## 📦 Output
+
+- Metadata tables (`.csv`)
+- Raster files (`.tif`)
+- Vector files (`.geojson`)
+- Download logs and statistics
+
+---
+
+## 📋 Requirements
+
+- Python 3.11+
+- Jupyter Notebook
+- Dependencies:
 
