@@ -31,7 +31,7 @@ The pipeline consists of four main components. Each is implemented in a separate
 
 ![Data Pipeline](https://github.com/hudson-passos/research-project-internship-nioo/blob/main/figures/DataPipeline.png?raw=true)
 
-### 1️⃣ Harvesting Metadata from NGR
+### Part 1: Harvesting Metadata from NGR
 
 **File:** `01_ngr_metadata_extractor.ipynb`
 
@@ -45,7 +45,7 @@ The pipeline consists of four main components. Each is implemented in a separate
 
 ---
 
-### 2️⃣ Extracting OGC Service Metadata
+### Part 2: Extracting OGC Service Metadata
 
 **File:** `02_get_coverage_and_feature_names.ipynb`
 
@@ -61,7 +61,7 @@ The pipeline consists of four main components. Each is implemented in a separate
 
 ---
 
-### 3️⃣ Spatial and Content-Based Filtering
+### Part 3: Spatial and Content-Based Filtering
 
 **File:** `03_filters_spatial_semantic.ipynb`
 
@@ -70,7 +70,7 @@ The pipeline consists of four main components. Each is implemented in a separate
 
 ---
 
-### 4️⃣ Data Download via WCS and WFS
+### Part 4: Data Download via WCS and WFS
 
 **File:** `04_download_wcs_and_wfs.ipynb`
 
@@ -80,6 +80,18 @@ The pipeline consists of four main components. Each is implemented in a separate
   - Pagination for WFS downloads
   - Fallbacks for version and axis label inconsistencies
 - Controlled via two editable CSVs (`wcs_table.csv`, `wfs_table.csv`) to manually select layers for download
+
+---
+
+### Additional Jupyter notebooks
+
+**File:** `00_install_packages.ipynb`
+
+This notebook ensures that all necessary Python packages are installed on the user’s machine before running the project. It serves as a setup step to prepare the working environment.
+
+**File:** `05_data_analysis.ipynb`
+
+This notebook contains exploratory and analytical scripts used to create visualizations and calculate summary statistics for the internship report. It supports the internship report but is not an essential part of the data pipeline.
 
 ---
 
