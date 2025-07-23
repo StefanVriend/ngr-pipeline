@@ -21,7 +21,7 @@ This repository contains a reproducible pipeline for discovering, filtering, and
 
 Although ecological data availability has grown significantly, researchers still face major challenges accessing relevant datasets—particularly legacy datasets scattered across studies or national databases requiring regional filtering.
 
-This project addresses those challenges by building an automated Python pipeline that streamlines the discovery, filtering, and retrieval of geospatial data. It is fully aligned with the [FAIR data principles](https://www.go-fair.org/fair-principles/) — **Findable, Accessible, Interoperable, and Reusable** — and evaluates the compatibility between NGR metadata and the [LTER-LIFE](https://lter-nl.nl/en) metadata structure.
+This project addresses those challenges by building an automated Python pipeline that streamlines the discovery, filtering, and retrieval of geospatial data. It is fully aligned with the [FAIR data principles](https://www.go-fair.org/fair-principles/) — **Findable, Accessible, Interoperable, and Reusable** — and evaluates the compatibility between NGR metadata and the [LTER-LIFE](https://lter-life.nl/en) metadata structure.
 
 ---
 
