@@ -33,7 +33,7 @@ The pipeline consists of four main components. Each is implemented in a separate
 
 ### Part 1: Harvesting Metadata from NGR
 
-**File:** `01_ngr_metadata_extractor.ipynb`
+📄 **File:** `01_ngr_metadata_extractor.ipynb`
 
 - Retrieves metadata records from the NGR catalog using CSW (Catalogue Service for the Web)
 - Parses XML responses to extract metadata fields such as:
@@ -45,7 +45,7 @@ The pipeline consists of four main components. Each is implemented in a separate
 
 ---
 
-### Part 2: Extracting OGC Service Metadata
+📄 ### Part 2: Extracting OGC Service Metadata
 
 **File:** `02_get_coverage_and_feature_names.ipynb`
 
@@ -63,7 +63,7 @@ The pipeline consists of four main components. Each is implemented in a separate
 
 ### Part 3: Spatial and Content-Based Filtering
 
-**File:** `03_filters_spatial_semantic.ipynb`
+📄 **File:** `03_filters_spatial_semantic.ipynb`
 
 - **Spatial filter:** selects datasets intersecting the Veluwe region (EPSG:28992), including a second-pass check to verify data presence
 - **Content filter:** applies fuzzy string matching (`fuzzywuzzy`) to metadata keywords and abstracts using a predefined ecological keyword list
@@ -72,7 +72,7 @@ The pipeline consists of four main components. Each is implemented in a separate
 
 ### Part 4: Data Download via WCS and WFS
 
-**File:** `04_download_wcs_and_wfs.ipynb`
+📄 **File:** `04_download_wcs_and_wfs.ipynb`
 
 - Downloads **raster data** via WCS and **vector data** via WFS
 - Features:
@@ -85,11 +85,11 @@ The pipeline consists of four main components. Each is implemented in a separate
 
 ### Additional Jupyter notebooks
 
-**File:** `00_install_packages.ipynb`
+📄 **File:** `00_install_packages.ipynb`
 
 This notebook ensures that all necessary Python packages are installed on the user’s machine before running the project. It serves as a setup step to prepare the working environment.
 
-**File:** `05_data_analysis.ipynb`
+📄 **File:** `05_data_analysis.ipynb`
 
 This notebook contains exploratory and analytical scripts used to create visualizations and calculate summary statistics for the internship report. It supports the internship report but is not an essential part of the data pipeline.
 
