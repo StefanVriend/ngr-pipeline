@@ -45,9 +45,9 @@ The pipeline consists of four main components. Each is implemented in a separate
 
 ---
 
-📄 ### Part 2: Extracting OGC Service Metadata
+### Part 2: Extracting OGC Service Metadata
 
-**File:** `02_get_coverage_and_feature_names.ipynb`
+📄 **File:** `02_get_coverage_and_feature_names.ipynb`
 
 - Uses OGC operations:
   - `GetCapabilities`
