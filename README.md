@@ -103,10 +103,3 @@ This notebook contains exploratory and analytical scripts used to create visuali
 - Download logs and statistics
 
 ---
-
-## Requirements
-
-- Python 3.11+
-- Jupyter Notebook
-- Dependencies:
-
