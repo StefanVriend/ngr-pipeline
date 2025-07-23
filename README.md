@@ -29,6 +29,8 @@ This project addresses those challenges by building an automated Python pipeline
 
 The pipeline consists of four main components. Each is implemented in a separate Jupyter Notebook and can be run independently or sequentially.
 
+https://github.com/hudson-passos/research-project-internship-nioo/blob/main/figures/DataPipeline.png?raw=true
+
 ### 1️⃣ Harvesting Metadata from NGR
 
 **File:** `01_ngr_metadata_extractor.ipynb`
