@@ -1,21 +1,10 @@
-# Internship Project
+# NGR pipeline
+> A reproducible pipeline for discovering, filtering, and downloading ecological geospatial datasets for the Veluwe region (Netherlands). It uses standardized OGC (Open Geospatial Consortium) web services to automate access to open geodata from the [Nationaal Georegister (NGR)](https://www.nationaalgeoregister.nl/).
 
 ## Summary
 
 **Author:** Hudson Passos  
-**Institution:** Wageningen University & Research (WUR)  
-**Internship Host:** Netherlands Institute of Ecology (NIOO-KNAW)  
-**Duration:** April 2, 2025 – August 12, 2025  
-**Project Title:** *Simplified Access to Veluwe Ecological Data Through OGC Web Services*  
-**Host Supervisor:** Stefan Vriend (NIOO-KNAW)  
-**WUR Supervisor:** Liesbeth Bakker (WUR, NIOO-KNAW)  
-**Repository Name:** `research-project-internship-nioo`
-
----
-
-This repository contains a reproducible pipeline for discovering, filtering, and downloading ecological geospatial datasets for the Veluwe region (Netherlands). It uses standardized OGC (Open Geospatial Consortium) web services to automate access to open geodata from the [Nationaal Georegister (NGR)](https://www.nationaalgeoregister.nl/).
-
----
+**Contributor:** Stefan Vriend 
 
 ## Context
 
@@ -29,7 +18,7 @@ This project addresses those challenges by building an automated Python pipeline
 
 The pipeline consists of four main components. Each is implemented in a separate Jupyter Notebook and can be run independently or sequentially.
 
-![Data Pipeline](https://github.com/hudson-passos/research-project-internship-nioo/blob/main/figures/DataPipeline.png?raw=true)
+![Data Pipeline](https://github.com/StefanVriend/ngr-pipeline/blob/main/figures/DataPipeline.png?raw=true)
 
 ### Part 1: Harvesting Metadata from NGR
 
